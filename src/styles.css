@@ -1,0 +1,27 @@
+.main {
+  padding: 15px;
+  background: #eee;
+  height: 100%;
+}
+
+.tasks-container .mat-drawer {
+  width: 200px;
+  background-color: #e1e9f5;
+}
+
+.tasks-container .mat-drawer-content {
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
+    .no-tasks-ill img {
+        height: 350px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    
+}

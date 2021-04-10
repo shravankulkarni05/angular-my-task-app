@@ -1,0 +1,4 @@
+<div class="add-btn" [ngClass]="classes" (click)="addNew()" (mouseenter)="mouseEnter()" (mouseleave)="mouseLeave()">
+    <span class="material-icons add-icon" *ngIf="!containerHovered">add</span>
+    <span class="btn-placeholder" *ngIf="placeholder && containerHovered">{{placeholder}}</span>
+</div>

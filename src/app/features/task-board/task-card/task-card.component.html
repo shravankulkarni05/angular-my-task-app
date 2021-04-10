@@ -1,0 +1,29 @@
+<mat-card class="task-card" (click)="editTask()" [ngStyle]="{'border-top': (showHeader ? '3px solid' + task.category.catColor : '')}" *ngIf="task?.id">
+    <div class="t-card-header" *ngIf="showHeader">
+        <span class="t-cat" [ngStyle]="{'border-color': task.category.catColor, 'color' : task.category.catColor}">
+            {{task.category.catName}}
+        </span>
+        <span class="t-status cursor-default">{{task.status}}</span>
+    </div>
+    <p class="t-name" [class.txt-strike]="task.status === 'C'">{{task.name}}</p>
+    <div class="t-footer">
+        <div class="info">
+            <!-- <span>
+                <span class="material-icons info-icon">message</span>
+                {{task.comments.length}}
+            </span>
+            <span>
+                <span class="material-icons info-icon">attach_file</span>
+                {{task.attachments.length}}
+            </span> -->
+            <span [title]="'Due By'">{{task.date}}</span>
+            <ng-container *ngIf="(task.prty | findItem: priorities) as priority">
+                <span class="material-icons t-prty" [title]="priority.name" [style.color]="priority.color">{{priority.icon}}</span>
+            </ng-container>
+        </div>
+        <span class="material-icons bk-icon marked cursor-ptr" *ngIf="task.bookmark; else noBookmark" (click)="setBookmark($event)">bookmark</span>
+        <ng-template #noBookmark>
+            <span class="material-icons bk-icon cursor-ptr" (click)="setBookmark($event)">bookmark_border</span>
+        </ng-template>
+    </div>
+</mat-card>

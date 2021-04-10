@@ -1,0 +1,79 @@
+.tasks-container {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.tasks-container .app-name {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  height: 80px;
+  padding: 0 15px;
+  background-color: #d9e4f5;
+}
+
+.task-cats-container {
+  padding: 15px;
+}
+
+.task-cats-container .task-cat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.task-cats-container .task-cat:hover:not(.fw-800) {
+  font-weight: 600;
+}
+
+.task-cats-container .task-cat .task-count {
+  font-size: 12px;
+  width: 30px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  overflow: hidden;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.greeting {
+  margin: 25px 0;
+}
+
+.greeting .msg {
+  font-weight: 300;
+  margin: 0;
+}
+
+.greeting .user {
+  font-weight: 600;
+}
+
+.no-tasks-ill {
+  text-align: center;
+  height: calc(100vh - 190px);
+}
+
+.no-tasks-ill img {
+  max-height: 500px;
+  vertical-align: middle;
+  border-style: none;
+}
+
+.no-tasks-ill .create-msg {
+  font-size: 28px;
+  font-weight: 300;
+  margin-top: 20px;
+  margin-bottom: 0;
+}

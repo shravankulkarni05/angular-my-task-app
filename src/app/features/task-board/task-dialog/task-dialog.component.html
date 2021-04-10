@@ -1,0 +1,36 @@
+<h2 mat-dialog-title class="fw-600 mb-0">{{!dialogData.isEdit ? 'Add Task': 'Edit Task'}}</h2>
+<div class="mat-typography">
+    <form [formGroup]="taskForm">
+        <mat-form-field appearance="standard" class="width-100">
+            <mat-label>Task Name</mat-label>
+            <input matInput formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="width-100">
+            <mat-label>Task Description</mat-label>
+            <input matInput formControlName="desc">
+        </mat-form-field>
+        <mat-form-field appearance="standard" class="width-100">
+            <mat-label>Select Priority</mat-label>
+            <mat-select formControlName="prty" required>
+                <mat-select-trigger *ngIf="taskForm.value.prty">
+                    <span class="material-icons prty-icon" [style.color]="taskForm.value.prty.color">{{taskForm.value.prty.icon}}</span>
+                    {{taskForm.value.prty.name}}
+                </mat-select-trigger>
+                <mat-option *ngFor="let prty of priorities" [value]="prty" >
+                    <span class="material-icons prty-icon" [style.color]="prty.color">{{prty.icon}}</span>
+                    {{prty.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+            <mat-label>Due Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions align="end" class="mb-0">
+    <button mat-stroked-button (click)="close()">Close</button>
+    <button mat-raised-button color="primary" (click)="addTask()">{{!dialogData.isEdit ? 'Add': 'Save'}}</button>
+</div>

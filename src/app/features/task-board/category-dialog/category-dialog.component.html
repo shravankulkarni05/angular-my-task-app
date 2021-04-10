@@ -1,0 +1,16 @@
+<h2 mat-dialog-title class="fw-600 mb-0">{{!dialogData.isEdit ? 'Add Category': 'Edit Category'}}</h2>
+<div class="mat-typography">
+    <form [formGroup]="categoryForm">
+        <mat-form-field appearance="standard" class="width-100">
+            <input matInput placeholder="Category Name" formControlName="catName" required>
+        </mat-form-field>
+        <div class="colors">
+            <p>Pick color for task category</p>
+            <color-circle [color]="colorState" [colors]="colors" (onChange)="colorChangeHandler($event)"></color-circle>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions align="end" class="mb-0">
+    <button mat-stroked-button (click)="close()">Close</button>
+    <button mat-raised-button color="primary" (click)="addCategory()">Add</button>
+</div>

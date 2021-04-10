@@ -1,0 +1,99 @@
+.task-board-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  margin-bottom: -2px;
+}
+
+.search-box .search-icon {
+  color: #c4c4c4;
+  margin-right: 8px;
+}
+
+.search-box .form-wrapper {
+  opacity: 1;
+  width: 200px;
+  display: inline-block;
+  height: 20px;
+}
+.search-box .form-wrapper .search-in {
+  line-height: 20;
+  border: 0 none;
+  outline: 0;
+  height: 20px;
+  font-weight: 600;
+  width: inherit;
+  background: transparent;
+}
+
+.search-box .form-wrapper .search-in::placeholder {
+  color: #c4c4c4;
+  opacity: 1;
+}
+
+.search-box .form-wrapper .search-in ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: #8d8c8c;
+  transition: 0.4s;
+  border-bottom: 0;
+}
+
+.search-box .form-wrapper .search-in:focus ~ .focus-border {
+  width: 100%;
+  transition: 0.4s;
+  left: 0;
+}
+
+.task-board-header-container .settings {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.settings .switch-theme {
+  margin-right: 25px;
+}
+
+.settings .switch-theme .switch-theme-toggle {
+  margin: 0 10px;
+}
+
+.settings .profile {
+  position: relative;
+  float: 1 auto;
+}
+
+.settings .profile .p-a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.settings .profile .p-img {
+  background-size: 32px 32px;
+  border: 0;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  height: 32px;
+  width: 32px;
+  z-index: 0;
+}
+
+.settings .profile .unfold-icon {
+  font-size: 16px;
+  position: relative;
+  top: 4px;
+  color: #7f7f7f;
+  margin-left: 5px;
+}

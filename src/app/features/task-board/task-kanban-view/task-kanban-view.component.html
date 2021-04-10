@@ -1,0 +1,48 @@
+<div class="kanb-drop-list" cdkDropListGroup>
+    <div class="example-container">
+        <h2>To Do</h2>
+        <div cdkDropList [id]="boardIds.todo" [cdkDropListData]="todo" class="example-list" (cdkDropListDropped)="drop($event)">
+            <app-add-button [classes]="['mb-20']" [placeholder]="'Add To Do'" (clicked)="addTask(boardIds.todo)"></app-add-button>
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                <app-task-card
+                    [task]="item"
+                    [showHeader]="false"
+                    [priorities]="priorities"
+                    (clicked)="editTask(item)"
+                    (bookmarkclicked)="setBookmark($event, item)">
+                </app-task-card>
+            </div>
+        </div>
+    </div>
+    <div class="example-container">
+        <h2>In Progress</h2>
+        <div cdkDropList [id]="boardIds.ip" [cdkDropListData]="inProgress" class="example-list" (cdkDropListDropped)="drop($event)">
+            <app-add-button [classes]="['mb-20']" [placeholder]="'Add In Progress'" (clicked)="addTask(boardIds.ip)"></app-add-button>
+            <div class="example-box" *ngFor="let item of inProgress" cdkDrag>
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <app-task-card
+                    [task]="item"
+                    [showHeader]="false"
+                    [priorities]="priorities"
+                    (clicked)="editTask(item)"
+                    (bookmarkclicked)="setBookmark($event, item)">
+                </app-task-card>
+            </div>
+        </div>
+    </div>
+    <div class="example-container">
+        <h2>Done</h2>
+        <div cdkDropList [id]="boardIds.done" [cdkDropListData]="done" class="example-list" (cdkDropListDropped)="drop($event)">
+            <app-add-button [classes]="['mb-20']" [placeholder]="'Add Completed'" (clicked)="addTask(boardIds.done)"></app-add-button>
+            <div class="example-box" *ngFor="let item of done" cdkDrag>
+                <app-task-card
+                    [task]="item"
+                    [showHeader]="false"
+                    [priorities]="priorities"
+                    (clicked)="editTask(item)"
+                    (bookmarkclicked)="setBookmark($event, item)">
+                </app-task-card>
+            </div>
+        </div>
+    </div>
+</div>

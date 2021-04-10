@@ -1,0 +1,22 @@
+<div class="task-board-header-container">
+    <div class="search-box">
+        <span class="material-icons search-icon">search</span>
+        <div class="form-wrapper">
+            <input class="search-in" type="text" placeholder="Search for anything" [autofocus]="false" autocomplete="off">
+            <span class="focus-border"></span>
+        </div>
+    </div>
+    <div class="settings">
+        <div class="switch-theme">
+            <span class="fs-18">🌞</span>
+            <mat-slide-toggle class="switch-theme-toggle" color="warn" [checked]="isDarkMode" (change)="switchTheme($event)"></mat-slide-toggle>
+            <span class="fs-18">🌙</span>
+        </div>
+        <div class="profile">
+            <a class="p-a">
+                <img class="p-img" src="assets/images/profile_img.jpg"/>
+                <span class="material-icons unfold-icon">unfold_more</span>
+            </a>
+        </div>
+    </div>
+</div>

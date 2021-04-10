@@ -1,0 +1,34 @@
+<mat-sidenav-container class="tasks-container">
+    <mat-sidenav mode="side" opened>
+        <div class="app-name">
+            {{appName}}
+        </div>
+        <div class="task-cats-container">
+            <app-add-button [placeholder]="'Add Category'" (clicked)="addCategory()"></app-add-button>
+            <div class="task-cat" *ngFor="let category of taskCategores"
+                [class.fw-800]="selCategory.catId === category.catId" (click)="selCategory = category">
+                <span class="width-100">{{category.catName}}</span>
+                <span class="task-count" [style.backgroundColor]="category.catColor">{{category.catTaskCount}}</span>
+            </div>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-task-board-header></app-task-board-header>
+        <div class="greeting">
+            <h1 class="msg">Welcome back, <span class="user">Shravan</span></h1>
+        </div>
+        <div class="no-tasks-ill" *ngIf="allTasks.length === 0 && selCategory.catId === 'ALL'">
+            <img src="assets/images/svg/no_tasks.svg">
+            <h2 class="create-msg">Let's Create New Task</h2>
+        </div>
+        <app-task-grid-view *ngIf="allTasks.length && selCategory.catId === 'ALL'"
+            [taskList]="allTasks"
+            [priorities]="priorities"
+            (taskUpdateOperation)="refreshTaskList()"></app-task-grid-view>
+        <app-task-kanban-view *ngIf="selCategory.catId !== 'ALL'" 
+            [category]="selCategory"
+            [taskData]="taskDataMap[selCategory.catId]"
+            [priorities]="priorities"
+            (taskUpdateOperation)="refreshTaskList()"></app-task-kanban-view>
+    </mat-sidenav-content>
+</mat-sidenav-container>

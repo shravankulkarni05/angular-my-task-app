@@ -1,0 +1,20 @@
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+  background-color: #dadada;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn .add-icon {
+  font-size: 20px;
+  color: #838383;
+}
+
+.add-btn .btn-placeholder {
+  font-size: 12px;
+  color: #000;
+}

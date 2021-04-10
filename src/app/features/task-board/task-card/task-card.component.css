@@ -1,0 +1,54 @@
+.task-card {
+  padding: 15px;
+  max-height: 180px;
+  /* min-height: 150px; */
+  max-width: 250px;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.task-card .t-name {
+  font-weight: 600;
+}
+
+.task-card .t-card-header {
+  margin-bottom: 10px;
+}
+
+.task-card .t-card-header,
+.t-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card .t-card-header .t-cat {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+.task-card .t-card-header .t-status {
+  font-size: 12px;
+}
+
+.task-card .t-footer .info .info-icon {
+  position: relative;
+  font-size: 14px;
+  top: 2px;
+}
+
+.task-card .t-footer .info span {
+  color: #a0a0a0;
+}
+
+.task-card .t-footer .info .t-prty {
+  position: relative;
+  font-size: 16px;
+  top: 2px;
+  margin-left: 5px;
+}
+
+.task-card .t-footer .marked {
+  color: #daa520;
+}

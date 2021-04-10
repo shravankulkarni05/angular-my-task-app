@@ -1,0 +1,11 @@
+<div class="grid-view"> 
+    <div class="grid-card" *ngFor="let task of taskList; let i = index">
+        <app-task-card 
+            [task]="task"
+            [showHeader]="true"
+            [priorities]="priorities"
+            (clicked)="editTask(task)"
+            (bookmarkclicked)="setBookmark($event, task)">
+        </app-task-card>
+    </div>
+</div>

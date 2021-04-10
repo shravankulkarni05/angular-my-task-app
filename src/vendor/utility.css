@@ -1,0 +1,42 @@
+.width-100 {
+  width: 100%;
+}
+
+.txt-strike {
+    text-decoration: line-through;
+}
+
+/* Font Weights */
+.fw-300 {
+  font-weight: 300 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+/* Margins */
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+
+/* Cursors */
+.cursor-ptr {
+  cursor: pointer;
+}
+
+.cursor-default {
+  cursor: default;
+}
